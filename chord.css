@@ -248,6 +248,8 @@ body {
   box-shadow: 
     0 10px 40px rgba(0, 0, 0, 0.5),
     inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch; 
 }
 
 .piano {
@@ -257,6 +259,7 @@ body {
   align-items: flex-start;
   gap: 2px;
   padding: 0;
+  min-width: max-content;  
 }
 
 .key {
@@ -697,31 +700,40 @@ body {
 }
 
 @media (max-width: 480px) {
-  /* Hide some piano keys on very small screens */
-  .key:nth-child(1),
-  .key:nth-child(2),
-  .key:nth-child(13),
-  .key:nth-child(14) {
-    display: none;
-  }
-  
   .white-key {
-    width: 40px;
+    width: 28px;
+    height: 120px; 
   }
   
+  .white-key:active,
+  .white-key.active {
+    height: 116px;
+  }
+
+  .black-key {
+    width: 18px;
+    height: 72px;
+    right: -9px;
+  }
+
+  .black-key:active,
+  .black-key.active {
+    height: 68px;
+  }
+
   .chord-buttons {
     flex-direction: column;
   }
-  
+
   .btn-chord {
     width: 100%;
   }
-  
+
   .control-buttons {
     flex-direction: column;
     width: 100%;
   }
-  
+
   .btn-control {
     width: 100%;
   }
