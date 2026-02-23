@@ -218,13 +218,11 @@ userInput.addEventListener("input", () => {
                 // console.log(correct.name, result.textContent);
                 if(correct != ''){
                     if(result.textContent == correct.name){
-                        output.textContent = "By Odin's Beard, you've done it!"; //you A # lad 
-                        console.log("correct");
+                        output.textContent = "You are correct! What A# lad!"; //you A # lad 
                         updateScore("win");
                     }
                     else{
                         output.textContent = "Try again next time!";
-                        console.log("incorrect");
                         updateScore("loss");
                     }
                 }
